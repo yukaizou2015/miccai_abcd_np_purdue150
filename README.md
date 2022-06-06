@@ -1,32 +1,60 @@
-ABCD Challenge
-Team: Purdue150
+# MICCAI 2019 ABCD Neurocognitive Prediction Challenge
+
+Team: Purdue150  
 Submission Date: Mar 24, 2019
 
-1. The submission includes the following major codes: datagenerator_ROI.py, training.py, testing_ROI_part1.py,testing_ROI_part2.py, evaluation.R
+If you use this codes in your analysis, please cite:
 
-2. The directory that includes these codes should have two directories named: trainvaliddata and testdata. The two directories includes all T1 data.
+ - Zou, Y., Jang, I., Reese, T.G., Yao, J., Zhu, W., Rispoli, J.V. (2019). Cortical and Subcortical Contributions to Predicting Intelligence Using 3D ConvNets. In: Pohl, K., Thompson, W., Adeli, E., Linguraru, M. (eds) Adolescent Brain Cognitive Development Neurocognitive Prediction. ABCD-NP 2019. Lecture Notes in Computer Science, vol 11791. Springer, Cham. [[link](https://doi.org/10.1007/978-3-030-31901-4_21)]
 
-3. Major dependencies: Tensorflow 1.12, Python 3.6, Keras 2.2.4, nibabel 2.3.3, R
+## Overview
 
-4. Example running command in order:
-1) Training
+1. The submission includes the following major codes: 
+ - `datagenerator_ROI.py`
+ - `training.py`
+ - `testing_ROI_part1.py`
+ - `testing_ROI_part2.py` 
+ - `evaluation.R`
+
+2. The directory that includes these codes should have two directories named: `trainvaliddata` and `testdata`. The two directories includes all T1 data.
+
+3. Major dependencies: 
+ - Tensorflow 1.12
+ - Python 3.6
+ - Keras 2.2.4
+ - nibabel 2.3.3
+ - R
+
+4. Output: `test_results.csv`
+
+## Example running command in order:
+
+### 1) Training
+
+```
  python training.py X1 13 3
  python training.py X1 71 3
  python training.py X1 77 3
-2) Testing
+```
+
+### 2) Testing
+
+```
  python testing_ROI_part1.py X1 13 3
  python testing_ROI_part2.py X1 13 3
  python testing_ROI_part1.py X1 71 3
  python testing_ROI_part2.py X1 71 3
  python testing_ROI_part1.py X1 77 3
  python testing_ROI_part2.py X1 77 3
-3) Evaluation
+```
+### 3) Evaluation
+
+```
  Rscript evaluation.R
+```
 
-5. Output
-test_results.csv
-
-6. All dependencies:
+## All dependencies
+```
 # Name                    Version                   Build  Channel
 attrs                     19.1.0                    <pip>
 backcall                  0.1.0                     <pip>
@@ -96,3 +124,4 @@ wheel                     0.33.1                   py36_0
 widgetsnbextension        3.4.2                     <pip>
 xz                        5.2.4                h14c3975_4  
 zlib                      1.2.11               h7b6447c_3
+```
